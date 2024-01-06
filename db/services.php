@@ -23,25 +23,25 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$functions = array(
+$functions = [
 
-	// === enrol related functions ===
-	'moodle_enrol_moodec_enrol_users' => array(
-		'classname' => 'enrol_moodec_external',
-		'methodname' => 'enrol_users',
-		'classpath' => 'enrol/moodec/externallib.php',
-		'description' => 'DEPRECATED: this deprecated function will be removed in a future version. This function has be renamed as enrol_moodec_enrol_users()',
-		'capabilities' => 'enrol/moodec:enrol',
-		'type' => 'write',
-	),
+    // === enrol related functions ===
+    'moodle_enrol_moodec_enrol_users' => [
+        'classname' => 'enrol_moodec_external',
+        'methodname' => 'enrol_users',
+        'classpath' => 'enrol/moodec/externallib.php',
+        'description' => 'DEPRECATED: this deprecated function will be removed in a future version. This function has been renamed as enrol_moodec_enrol_users()',
+        'capabilities' => 'enrol/moodec:enrol',
+        'type' => 'write',
+    ],
 
-	'enrol_moodec_enrol_users' => array(
-		'classname' => 'enrol_moodec_external',
-		'methodname' => 'enrol_users',
-		'classpath' => 'enrol/moodec/externallib.php',
-		'description' => 'moodec enrol users',
-		'capabilities' => 'enrol/moodec:enrol',
-		'type' => 'write',
-	),
+    'enrol_moodec_enrol_users' => [
+        'classname' => 'enrol_moodec_external',
+        'methodname' => 'enrol_users',
+        'classpath' => 'enrol/moodec/externallib.php',
+        'description' => 'moodec enrol users',
+        'capabilities' => 'enrol/moodec:enrol',
+        'type' => 'write',
+    ],
 
-);
+];
