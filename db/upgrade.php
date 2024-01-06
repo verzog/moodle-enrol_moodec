@@ -18,47 +18,34 @@
  * This file keeps track of upgrades to the moodec enrolment plugin
  *
  * @package    enrol_moodec
- * @copyright  2012 Petr Skoda {@link http://skodak.org
+ * @copyright  2012 Petr Skoda {@link http://skodak.org}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
 function xmldb_enrol_moodec_upgrade($oldversion) {
-	global $CFG, $DB, $OUTPUT;
+    global $DB, $OUTPUT;
 
-	$dbman = $DB->get_manager();
+    $dbman = $DB->get_manager();
 
-	// Moodle v2.3.0 release upgrade line
-	// Put any upgrade step following this
+    // Moodle v2.3.0 release upgrade line
+    // Put any upgrade step following this
 
-	if ($oldversion < 2012100702) {
-		// Set default expiry threshold to 1 day.
-		$DB->execute("UPDATE {enrol} SET expirythreshold = 86400 WHERE enrol = 'moodec' AND expirythreshold = 0");
-		upgrade_plugin_savepoint(true, 2012100702, 'enrol', 'moodec');
-	}
+    if ($oldversion < 2012100702) {
+        // Set default expiry threshold to 1 day.
+        $DB->execute("UPDATE {enrol} SET expirythreshold = 86400 WHERE enrol = 'moodec' AND expirythreshold = 0");
+        upgrade_plugin_savepoint(true, 2012100702, 'enrol', 'moodec');
+    }
 
-	if ($oldversion < 2012101400) {
-		// Delete obsoleted settings, now using expiry* prefix to make them more consistent.
-		unset_config('notifylast', 'enrol_moodec');
-		unset_config('notifyhour', 'enrol_moodec');
-		upgrade_plugin_savepoint(true, 2012101400, 'enrol', 'moodec');
-	}
+    if ($oldversion < 2012101400) {
+        // Delete obsoleted settings, now using expiry* prefix to make them more consistent.
+        unset_config('notifylast', 'enrol_moodec');
+        unset_config('notifyhour', 'enrol_moodec');
+        upgrade_plugin_savepoint(true, 2012101400, 'enrol', 'moodec');
+    }
 
-	// Moodle v2.4.0 release upgrade line
-	// Put any upgrade step following this
+    // Put any upgrade step for subsequent Moodle releases here.
 
-	// Moodle v2.5.0 release upgrade line.
-	// Put any upgrade step following this.
-
-	// Moodle v2.6.0 release upgrade line.
-	// Put any upgrade step following this.
-
-	// Moodle v2.7.0 release upgrade line.
-	// Put any upgrade step following this.
-
-	// Moodle v2.8.0 release upgrade line.
-	// Put any upgrade step following this.
-
-	return true;
+    return true;
 }
