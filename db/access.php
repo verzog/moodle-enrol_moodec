@@ -1,3 +1,4 @@
+
 <?php
 // This file is part of Moodle - http://moodle.org/
 //
@@ -24,53 +25,42 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$capabilities = array(
+$capabilities = [
 
-	/* Add, edit or remove moodec enrol instance. */
-	'enrol/moodec:config' => array(
-		'captype' => 'write',
-		'contextlevel' => CONTEXT_COURSE,
-		'archetypes' => array(
-			'manager' => CAP_ALLOW,
-		),
-	),
+    /* Add, edit or remove moodec enrol instance. */
+    'enrol/moodec:config' => [
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_COURSE,
+        'archetypes' => ['manager' => CAP_ALLOW],
+    ],
 
-	/* Enrol anybody. */
-	'enrol/moodec:enrol' => array(
-		'captype' => 'write',
-		'contextlevel' => CONTEXT_COURSE,
-		'archetypes' => array(
-			'manager' => CAP_ALLOW,
-			'editingteacher' => CAP_ALLOW,
-		),
-	),
+    /* Enrol anybody. */
+    'enrol/moodec:enrol' => [
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_COURSE,
+        'archetypes' => ['manager' => CAP_ALLOW, 'editingteacher' => CAP_ALLOW],
+    ],
 
-	/* Manage enrolments of users. */
-	'enrol/moodec:manage' => array(
-		'captype' => 'write',
-		'contextlevel' => CONTEXT_COURSE,
-		'archetypes' => array(
-			'manager' => CAP_ALLOW,
-			'editingteacher' => CAP_ALLOW,
-		),
-	),
+    /* Manage enrolments of users. */
+    'enrol/moodec:manage' => [
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_COURSE,
+        'archetypes' => ['manager' => CAP_ALLOW, 'editingteacher' => CAP_ALLOW],
+    ],
 
-	/* Unenrol anybody (including self) - watch out for data loss. */
-	'enrol/moodec:unenrol' => array(
-		'captype' => 'write',
-		'contextlevel' => CONTEXT_COURSE,
-		'archetypes' => array(
-			'manager' => CAP_ALLOW,
-			'editingteacher' => CAP_ALLOW,
-		),
-	),
+    /* Unenrol anybody (including self) - watch out for data loss. */
+    'enrol/moodec:unenrol' => [
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_COURSE,
+        'archetypes' => ['manager' => CAP_ALLOW, 'editingteacher' => CAP_ALLOW],
+    ],
 
-	/* Unenrol self - watch out for data loss. */
-	'enrol/moodec:unenrolself' => array(
-		'captype' => 'write',
-		'contextlevel' => CONTEXT_COURSE,
-		'archetypes' => array(
-		),
-	),
+    /* Unenrol self - watch out for data loss. */
+    'enrol/moodec:unenrolself' => [
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_COURSE,
+        'archetypes' => [],
+    ],
 
-);
+];
+
